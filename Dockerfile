@@ -1,4 +1,5 @@
 FROM ruby:3.3.6
+ENV RAILS_ENV=production
 RUN apt-get update -qq && apt-get install -y nodejs default-mysql-client
 
 WORKDIR /app
