@@ -15,6 +15,8 @@ test:
   database: app_test
 
 production:
-  <<: *default
-  # HerokuのDATABASE_URLを使用するため、database.ymlの設定を上書きしない
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   url: <%= ENV['DATABASE_URL'] %>
+
