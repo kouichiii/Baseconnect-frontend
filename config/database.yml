@@ -15,6 +15,20 @@ test:
   database: app_test
 
 production:
-  <<: *default
-  # HerokuのDATABASE_URLを使用するため、database.ymlの設定を上書きしない
-  url: <%= ENV['DATABASE_URL'] %>
+  primary:
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: your_primary_database
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    database: your_cable_database
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
+
