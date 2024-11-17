@@ -16,6 +16,5 @@ test:
 
 production:
   <<: *default
-  database: app_production
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # HerokuのDATABASE_URLを使用するため、database.ymlの設定を上書きしない
+  url: <%= ENV['DATABASE_URL'] %>
