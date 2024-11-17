@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_15_183600) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_17_035628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "action_cable_channels", force: :cascade do |t|
+    t.string "identifier", null: false
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identifier"], name: "index_action_cable_channels_on_identifier", unique: true
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
