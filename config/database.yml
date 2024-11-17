@@ -16,18 +16,21 @@ test:
 
 production:
   <<: *default  
+  adapter: postgresql
   database: <%= ENV['APP_DATABASE'] %>
   username: <%= ENV['APP_DATABASE_USERNAME'] %>
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
   host: <%= ENV['APP_DATABASE_HOST'] %>
 
   cable:
+    adapter: postgresql
     database: <%= ENV['APP_DATABASE'] %>
     username: <%= ENV['APP_DATABASE_USERNAME'] %>
     password: <%= ENV['APP_DATABASE_PASSWORD'] %>
     host: <%= ENV['APP_DATABASE_HOST'] %>
 
 cache:
+  adapter: postgresql
   database: <%= ENV['APP_DATABASE'] %>
   username: <%= ENV['APP_DATABASE_USERNAME'] %>
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
@@ -35,6 +38,7 @@ cache:
 
 queue:
   <<: *default  
+  adapter: postgresql
   database: <%= ENV['APP_DATABASE'] %>
   username: <%= ENV['APP_DATABASE_USERNAME'] %>
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
