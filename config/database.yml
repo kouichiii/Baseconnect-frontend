@@ -15,9 +15,9 @@ test:
   database: app_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
-  queue: <%= ENV['QUEUE_DATABASE_URL'] %>
+  <<: *default
+  database: <%= ENV['APP_DATABASE'] %>
+  username: <%= ENV['APP_DATABASE_USERNAME'] %>
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['APP_DATABASE_HOST'] %>
 
