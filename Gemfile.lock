@@ -286,8 +286,8 @@ DEPENDENCIES
   rails (~> 8.0.0)
   rubocop-rails-omakase
   solid_cable
-  solid_cache
-  solid_queue
+  solid_cache (~> 1.0.6)
+  solid_queue (~> 1.0.1)
   thruster
   tzinfo-data
 
