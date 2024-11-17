@@ -21,3 +21,9 @@ production:
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
   host: <%= ENV['APP_DATABASE_HOST'] %>
 
+  cable:
+    database: <%= ENV['APP_DATABASE'] %>
+    username: <%= ENV['APP_DATABASE_USERNAME'] %>
+    password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+    host: <%= ENV['APP_DATABASE_HOST'] %>
+
